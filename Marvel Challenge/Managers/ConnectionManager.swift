@@ -18,7 +18,6 @@ class ConnectionManager: NSObject {
         }
         
         Alamofire.request(url, parameters: params).responseJSON { (response)  -> Void in
-            print(response)
             completionHandler(response)
         }
     }

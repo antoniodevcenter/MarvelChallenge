@@ -12,7 +12,7 @@ class APIManager: NSObject {
 
     static let baseURL = "https://gateway.marvel.com:443/v1/public"
     
-    static func getCharacters(limit: UInt, offset: UInt) {
+    static func getCharacters(startingLetter: String, limit: UInt, offset: UInt, withCompletion completionHandler: @escaping (_ response: CharacterDataWrapper?, _ failure: Error?) -> Void) {
         let url = baseURL.appending("/characters")
         
         let timestamp = "\(Date().timeIntervalSince1970)"
@@ -20,12 +20,13 @@ class APIManager: NSObject {
         
         let parameters : [String : Any] = ["limit" : limit,
                                            "offset" : offset,
+                                           "nameStartsWith" : startingLetter,
                                            "apikey" : apiKey,
                                            "ts" : timestamp,
                                            "hash" : hash]
         
         ResponseParserManager.parseArrayOfCharacters(url: url, parameters: parameters) { (characterDataWrapper, error) in
-            
+            completionHandler(characterDataWrapper, error)
         }
     }
     

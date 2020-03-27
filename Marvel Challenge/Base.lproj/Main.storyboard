@@ -20,10 +20,32 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="6Jg-D9-DWK"/>
+                    <connections>
+                        <segue destination="2zx-bD-OVO" kind="show" identifier="goToCharactersListFromIndex" id="UGO-0m-y9z"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Aq-iy-61S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1763.7681159420292" y="164.73214285714286"/>
+        </scene>
+        <!--Characters List Table View Controller-->
+        <scene sceneID="GEi-bv-ENM">
+            <objects>
+                <tableViewController id="2zx-bD-OVO" customClass="CharactersListTableViewController" customModule="Marvel_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Mqu-ma-SUP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="2zx-bD-OVO" id="Xjr-AC-9QP"/>
+                            <outlet property="delegate" destination="2zx-bD-OVO" id="Wjr-eA-uG7"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="lHW-yR-RPm"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lN7-FV-IcK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2638" y="165"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BZx-kg-WH5">

@@ -12,6 +12,7 @@ class CharactersIndexTableViewController: UITableViewController, CharactersIndex
 
     private let presenter = CharactersIndexPresenter()
     
+    var selectedIndexLetter: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,25 @@ class CharactersIndexTableViewController: UITableViewController, CharactersIndex
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        self.presenter.setSelectedIndexLetter(indexLetter: presenter.sections[indexPath.row])
     }
     
+    // MARK: - Presenter delegate
+    
+    func setSelectedIndexLetter(indexLetter: String) {
+        self.selectedIndexLetter = indexLetter
+        performSegue(withIdentifier: "goToCharactersListFromIndex", sender: self)
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "goToCharactersListFromIndex" {
+            let charactersListTableViewController : CharactersListTableViewController = segue.destination as! CharactersListTableViewController
+            charactersListTableViewController.configureFor(startingLetter: self.selectedIndexLetter!)
+            
+        }
+    }
 
 }

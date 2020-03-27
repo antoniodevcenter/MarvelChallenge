@@ -9,7 +9,7 @@
 import Foundation
 
 protocol CharactersIndexPresenterDelegate: NSObjectProtocol {
-    
+    func setSelectedIndexLetter(indexLetter: String)
 }
 
 class CharactersIndexPresenter {
@@ -24,5 +24,9 @@ class CharactersIndexPresenter {
     
     private func initArrayOfIndexes() {
         sections = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "3"]
+    }
+    
+    func setSelectedIndexLetter(indexLetter: String) {
+        self.delegate!.setSelectedIndexLetter(indexLetter: indexLetter)
     }
 }

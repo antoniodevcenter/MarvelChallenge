@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        APIManager.getCharacters(limit: 20, offset: 0)
+//        APIManager.getCharacters(startingLetter: "", limit: 20, offset: 0)
     }
 
 
