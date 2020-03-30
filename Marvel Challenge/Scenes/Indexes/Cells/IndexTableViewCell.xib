@@ -25,8 +25,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2Mb-1O-WEn" secondAttribute="trailing" constant="16" id="TfD-aY-1Yu"/>
+                    <constraint firstItem="2Mb-1O-WEn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="ivb-jq-stZ"/>
                     <constraint firstItem="2Mb-1O-WEn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="jke-NX-8Be"/>
-                    <constraint firstItem="2Mb-1O-WEn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="rDK-rO-zfj"/>
+                    <constraint firstAttribute="bottom" secondItem="2Mb-1O-WEn" secondAttribute="bottom" constant="10.5" id="pYJ-3f-KN1"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

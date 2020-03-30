@@ -9,13 +9,14 @@
 import Foundation
 
 protocol CharactersIndexPresenterDelegate: NSObjectProtocol {
-    func setSelectedIndexLetter(indexLetter: String)
+    func performSegue()
 }
 
 class CharactersIndexPresenter {
     
     weak private var delegate: CharactersIndexPresenterDelegate?
     var sections = Array<String>()
+    var selectedIndexLetter: String?
     
     func initWithDelegate(delegate: CharactersIndexPresenterDelegate?) {
         self.delegate = delegate
@@ -27,6 +28,7 @@ class CharactersIndexPresenter {
     }
     
     func setSelectedIndexLetter(indexLetter: String) {
-        self.delegate!.setSelectedIndexLetter(indexLetter: indexLetter)
+        self.selectedIndexLetter = indexLetter
+        self.delegate!.performSegue()
     }
 }

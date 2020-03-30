@@ -17,5 +17,7 @@ struct Thumbnail: Codable {
         case thumbnailExtension = "extension"
     }
     
-    
+    static func createPath(thumbnail: Thumbnail, size: String) -> String {
+        return "\(thumbnail.path!)/\(size).\(thumbnail.thumbnailExtension!)"
+    }
 }

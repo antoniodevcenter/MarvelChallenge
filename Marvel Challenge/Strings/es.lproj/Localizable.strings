@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Marvel Challenge
+
+  Created by Antonio on 27/03/2020.
+  Copyright © 2020 Antonio. All rights reserved.
+*/
+
+"Index" = "Índice";
+"Characters starting with %@" = "Personajes que empiezan por %@";
+"No description available" = "No hay descripción disponible";

@@ -34,6 +34,20 @@ class CharactersListTableViewController: UITableViewController, CharactersListPr
         self.tableView.reloadData()
     }
     
+    func goToCharacterDetail(id: Int) {
+        performSegue(withIdentifier: "goToCharacterDetailFromCharactersList", sender: self)
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "goToCharacterDetailFromCharactersList" {
+            let characterDetailViewController : CharacterDetailViewController = segue.destination as! CharacterDetailViewController
+            characterDetailViewController.configureWith(character: self.presenter.selectedCharacter!)
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,10 +68,13 @@ class CharactersListTableViewController: UITableViewController, CharactersListPr
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let character = presenter.arrayOfCharacters[indexPath.row]
+        presenter.didSelect(character: character)
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == presenter.arrayOfCharacters.count - 5 {
+        if indexPath.row == presenter.arrayOfCharacters.count - 10 {
 //            presenter.getArticlesFor(categoryName: self.wikiCategory.nameForURL, limit: presenter.limit, offset: presenter.offset)
             presenter.getCharactersFor(startingLetter: self.startingLetter!, limit: presenter.limit, offset: presenter.offset)
         }

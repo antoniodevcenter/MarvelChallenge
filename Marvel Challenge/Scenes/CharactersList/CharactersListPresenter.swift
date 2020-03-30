@@ -11,6 +11,7 @@ import Foundation
 protocol CharactersListPresenterDelegate: NSObjectProtocol {
     func setStartingLetter(startingLetter: String?)
     func updateCharactersArray(arrayOfCharacters: [Character]?, error: Error?)
+    func goToCharacterDetail(id: Int)
 }
 
 class CharactersListPresenter {
@@ -22,6 +23,7 @@ class CharactersListPresenter {
     var limit: UInt = 20
     var offset: UInt = 0
     var moreItemsToDownload = true
+    var selectedCharacter: Character?
     
     func getCharactersFor(startingLetter: String, limit: UInt, offset: UInt) {
         
@@ -48,6 +50,15 @@ class CharactersListPresenter {
         self.startingLettter = letter
         self.delegate?.setStartingLetter(startingLetter: letter)
         self.getCharactersFor(startingLetter: letter, limit: limit, offset: offset)
+    }
+    
+    func didSelect(character: Character) {
+        self.selectedCharacter = character
+        
+        guard self.selectedCharacter != nil else {
+            return
+        }
+        self.delegate?.goToCharacterDetail(id: character.id!)
     }
     
 }

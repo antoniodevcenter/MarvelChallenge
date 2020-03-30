@@ -19,4 +19,8 @@ extension String {
         }
         return hash.map { String(format: "%02x", $0) }.joined()
     }
+    
+    static func createThumbnailString(thumbnail: Thumbnail, size: String) -> String {
+        return "\(thumbnail.path!)\(size).\(thumbnail.thumbnailExtension!)"
+    }
 }

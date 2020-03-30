@@ -34,17 +34,14 @@ class CharacterNameTableViewCell: UITableViewCell {
         self.indexPath = indexPath
         self.characterNameLabel.text = character.name
                 
-        imagesDownloadManager.downloadImage(url: createThumbnailString()) { (image) in
+        let thumbnailString = Thumbnail.createPath(thumbnail: character.thumbnail, size: "standard_medium")
+        
+        imagesDownloadManager.downloadImage(url: thumbnailString) { (image) in
             if self.indexPath == indexPath {
                 self.characterImage.image = image
                 self.characterImage.backgroundColor = UIColor.clear
             }
         }
-        
-    }
-    
-    func createThumbnailString() -> String{
-        return "\(character!.thumbnail.path!)/standard_medium.\(character!.thumbnail.thumbnailExtension!)"
     }
     
 }

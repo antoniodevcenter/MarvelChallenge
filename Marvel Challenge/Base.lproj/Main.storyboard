@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -42,10 +43,57 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="lHW-yR-RPm"/>
+                    <connections>
+                        <segue destination="XMe-bp-UrU" kind="show" identifier="goToCharacterDetailFromCharactersList" id="l2v-VM-ZOQ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lN7-FV-IcK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2638" y="165"/>
+        </scene>
+        <!--Character Detail View Controller-->
+        <scene sceneID="t2o-IA-Sfy">
+            <objects>
+                <viewController id="XMe-bp-UrU" customClass="CharacterDetailViewController" customModule="Marvel_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xkz-br-lEL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ASG-hA-s5m">
+                                <rect key="frame" x="0.0" y="88" width="414" height="232"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ASG-hA-s5m" secondAttribute="height" multiplier="207:116" id="TeB-ci-RDm"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gRl-yU-FAq">
+                                <rect key="frame" x="0.0" y="328" width="414" height="568"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="XMe-bp-UrU" id="bHM-KX-6Bs"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gRl-yU-FAq" firstAttribute="leading" secondItem="0jc-ga-2xO" secondAttribute="leading" id="Kma-os-d8v"/>
+                            <constraint firstItem="ASG-hA-s5m" firstAttribute="leading" secondItem="0jc-ga-2xO" secondAttribute="leading" id="NHQ-t5-MXU"/>
+                            <constraint firstItem="0jc-ga-2xO" firstAttribute="trailing" secondItem="gRl-yU-FAq" secondAttribute="trailing" id="Vat-xB-yEf"/>
+                            <constraint firstItem="0jc-ga-2xO" firstAttribute="trailing" secondItem="ASG-hA-s5m" secondAttribute="trailing" id="euz-kP-Iar"/>
+                            <constraint firstItem="gRl-yU-FAq" firstAttribute="bottom" secondItem="0jc-ga-2xO" secondAttribute="bottom" constant="34" id="k6l-8x-29w"/>
+                            <constraint firstItem="gRl-yU-FAq" firstAttribute="top" secondItem="ASG-hA-s5m" secondAttribute="bottom" constant="8" id="kF7-Ia-cEW"/>
+                            <constraint firstItem="ASG-hA-s5m" firstAttribute="top" secondItem="0jc-ga-2xO" secondAttribute="top" id="zWk-nT-WU0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0jc-ga-2xO"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zo3-yr-kJ3"/>
+                    <connections>
+                        <outlet property="characterImageView" destination="ASG-hA-s5m" id="S9b-A8-rCM"/>
+                        <outlet property="tableView" destination="gRl-yU-FAq" id="8Bc-Lj-Rtp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G0Q-Jc-j95" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3437.68115942029" y="164.73214285714286"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BZx-kg-WH5">

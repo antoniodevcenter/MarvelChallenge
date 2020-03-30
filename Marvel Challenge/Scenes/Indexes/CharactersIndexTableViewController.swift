@@ -8,19 +8,15 @@
 
 import UIKit
 
-class CharactersIndexTableViewController: UITableViewController, CharactersIndexPresenterDelegate {
+class CharactersIndexTableViewController: UITableViewController {
 
     private let presenter = CharactersIndexPresenter()
-    
-    var selectedIndexLetter: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: IndexTableViewCell.cellIdentifier(), bundle: nil), forCellReuseIdentifier: IndexTableViewCell.cellIdentifier())
-
         self.presenter.initWithDelegate(delegate: self)
-        
     }
 
     // MARK: - Table view data source
@@ -32,7 +28,6 @@ class CharactersIndexTableViewController: UITableViewController, CharactersIndex
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.sections.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : IndexTableViewCell = tableView.dequeueReusableCell(withIdentifier: IndexTableViewCell.cellIdentifier(), for: indexPath) as! IndexTableViewCell
@@ -46,23 +41,22 @@ class CharactersIndexTableViewController: UITableViewController, CharactersIndex
         tableView.deselectRow(at: indexPath, animated: true)
         self.presenter.setSelectedIndexLetter(indexLetter: presenter.sections[indexPath.row])
     }
-    
-    // MARK: - Presenter delegate
-    
-    func setSelectedIndexLetter(indexLetter: String) {
-        self.selectedIndexLetter = indexLetter
-        performSegue(withIdentifier: "goToCharactersListFromIndex", sender: self)
-    }
-    
+
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
         if segue.identifier == "goToCharactersListFromIndex" {
             let charactersListTableViewController : CharactersListTableViewController = segue.destination as! CharactersListTableViewController
-            charactersListTableViewController.configureFor(startingLetter: self.selectedIndexLetter!)
-            
+            charactersListTableViewController.configureFor(startingLetter: self.presenter.selectedIndexLetter!)
         }
     }
 
+}
+
+//MARK: - Presenter Delegate
+
+extension CharactersIndexTableViewController: CharactersIndexPresenterDelegate {
+    func performSegue() {
+        performSegue(withIdentifier: "goToCharactersListFromIndex", sender: self)
+    }
 }
