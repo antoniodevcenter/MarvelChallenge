@@ -16,11 +16,13 @@ class ResponseParserManager {
                                        withCompletion completionHandler: @escaping (_ response: CharacterDataWrapper?, _ error: Error?) -> Void) {
         
         ConnectionManager.connectWith(url: url, params: parameters) { (dataResponse) in
-            
-            if let characters = try? JSONDecoder().decode(CharacterDataWrapper.self, from: (dataResponse?.data)!) {
+            do {
+                let characters = try JSONDecoder().decode(CharacterDataWrapper.self, from: (dataResponse?.data)!)
                 completionHandler(characters, nil)
-            }
-            
+                
+            } catch {
+                completionHandler(nil, error)
+            } 
         }
     }
     

@@ -28,6 +28,7 @@ class CharacterDetailPresenter {
         APIManager.getCharacterWith(id: character.id!) { (characterDataWrapper, error) in
 
             guard error == nil else {
+                // Error Handling
                 return
             }
 

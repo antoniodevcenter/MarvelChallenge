@@ -12,7 +12,6 @@
 		801B2D9F242CC31000158C9F /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B2D9E242CC31000158C9F /* ConnectionManager.swift */; };
 		8050C98C242CBD4E00CCF488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8050C98B242CBD4E00CCF488 /* AppDelegate.swift */; };
 		8050C98E242CBD4E00CCF488 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8050C98D242CBD4E00CCF488 /* SceneDelegate.swift */; };
-		8050C990242CBD4E00CCF488 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8050C98F242CBD4E00CCF488 /* ViewController.swift */; };
 		8050C993242CBD4E00CCF488 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8050C991242CBD4E00CCF488 /* Main.storyboard */; };
 		8050C995242CBD4F00CCF488 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8050C994242CBD4F00CCF488 /* Assets.xcassets */; };
 		8050C998242CBD4F00CCF488 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8050C996242CBD4F00CCF488 /* LaunchScreen.storyboard */; };
@@ -73,7 +72,6 @@
 		8050C988242CBD4E00CCF488 /* Marvel Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Marvel Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8050C98B242CBD4E00CCF488 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8050C98D242CBD4E00CCF488 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8050C98F242CBD4E00CCF488 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8050C992242CBD4E00CCF488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8050C994242CBD4F00CCF488 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8050C997242CBD4F00CCF488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 				801B2D99242CBFBC00158C9F /* Managers */,
 				8050C98B242CBD4E00CCF488 /* AppDelegate.swift */,
 				8050C98D242CBD4E00CCF488 /* SceneDelegate.swift */,
-				8050C98F242CBD4E00CCF488 /* ViewController.swift */,
 				8050C991242CBD4E00CCF488 /* Main.storyboard */,
 				8050C994242CBD4F00CCF488 /* Assets.xcassets */,
 				8050C996242CBD4F00CCF488 /* LaunchScreen.storyboard */,
@@ -539,7 +536,6 @@
 				8054B5EC2431FA8600F91D4F /* CharacterInfoTableViewCell.swift in Sources */,
 				801B2D9F242CC31000158C9F /* ConnectionManager.swift in Sources */,
 				8054B5F6243240C600F91D4F /* LoadingView.swift in Sources */,
-				8050C990242CBD4E00CCF488 /* ViewController.swift in Sources */,
 				8050C98C242CBD4E00CCF488 /* AppDelegate.swift in Sources */,
 				8054B5F92433198100F91D4F /* WebViewController.swift in Sources */,
 				80C31000242E0E45008AC74C /* CharacterNameTableViewCell.swift in Sources */,

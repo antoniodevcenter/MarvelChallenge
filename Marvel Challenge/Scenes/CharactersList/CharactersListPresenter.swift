@@ -34,6 +34,7 @@ class CharactersListPresenter {
             (characterDataWrapper, error) in
             
             guard error == nil else {
+                // Error handling
                 return
             }
             self.offset = self.offset + 20

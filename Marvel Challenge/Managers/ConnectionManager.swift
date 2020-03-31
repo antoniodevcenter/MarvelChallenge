@@ -13,9 +13,6 @@ class ConnectionManager: NSObject {
     
     static func connectWith(url: String, params: [String : Any]?, withCompletion completionHandler: @escaping (_ response: DataResponse<Any>?) -> Void) {
 
-        for (key, value) in params! {
-            print("\(key) -> \(value)")
-        }
         
         Alamofire.request(url, parameters: params).responseJSON { (response)  -> Void in
             completionHandler(response)
