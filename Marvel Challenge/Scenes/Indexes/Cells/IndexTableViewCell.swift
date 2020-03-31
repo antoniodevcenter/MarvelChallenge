@@ -27,7 +27,7 @@ class IndexTableViewCell: UITableViewCell {
     
     func configureWith(indexLetter: String) {
         self.letter = indexLetter
-        titleLabel.text = "Personajes que empiezan por \(indexLetter)"
+        titleLabel.text = "Characters starting with".localized() + " \(indexLetter)"
     }
     
 }

@@ -7,5 +7,12 @@
 */
 
 "Index" = "Index";
-"Characters starting with %@" = "Characters starting with %@";
+"Characters starting with" = "Characters starting with";
 "No description available" = "No description available";
+"Information" = "Information";
+"URLs" = "URLs";
+"Comics" = "Comics";
+"Stories" = "Stories";
+"Events" = "Events";
+"Series" = "Series";
+"Back" = "Back";

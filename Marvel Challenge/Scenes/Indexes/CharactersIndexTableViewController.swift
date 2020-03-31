@@ -17,7 +17,7 @@ class CharactersIndexTableViewController: UITableViewController {
         
         tableView.register(UINib(nibName: IndexTableViewCell.cellIdentifier(), bundle: nil), forCellReuseIdentifier: IndexTableViewCell.cellIdentifier())
         self.presenter.initWithDelegate(delegate: self)
-        self.title = "Index"
+        self.title = "Index".localized()
     }
 
     // MARK: - Table view data source

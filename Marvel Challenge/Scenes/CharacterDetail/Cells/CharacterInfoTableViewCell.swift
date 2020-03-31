@@ -30,7 +30,7 @@ class CharacterInfoTableViewCell: UITableViewCell {
         self.characterNameLabel.text = character.name
         
         if character.description == "" || character.description == nil {
-            self.characterDescriptionLabel.text = "no description available"
+            self.characterDescriptionLabel.text = "No description available".localized()
         } else {
             self.characterDescriptionLabel.text = character.description
         }

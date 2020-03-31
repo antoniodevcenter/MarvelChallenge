@@ -7,5 +7,12 @@
 */
 
 "Index" = "Índice";
-"Characters starting with %@" = "Personajes que empiezan por %@";
+"Characters starting with" = "Personajes que empiezan por";
 "No description available" = "No hay descripción disponible";
+"Information" = "Información";
+"URLs" = "URLs";
+"Comics" = "Comics";
+"Stories" = "Historias";
+"Events" = "Eventos";
+"Series" = "Series";
+"Back" = "Volver";

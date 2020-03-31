@@ -33,7 +33,7 @@ class WebViewController: UIViewController {
     
     fileprivate func setToolBar() {
         let screenWidth = self.view.bounds.width
-        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(goBack))
+        let backButton = UIBarButtonItem(title: "Back".localized(), style: .plain, target: self, action: #selector(goBack))
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 44))
         
         toolBar.isTranslucent = false

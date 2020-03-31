@@ -124,17 +124,17 @@ extension CharacterDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Info"
+            return "Information".localized()
         case 1:
-            return "URLs"
+            return "URLs".localized()
         case 2:
-            return "Comics"
+            return "Comics".localized()
         case 3:
-            return "Stories"
+            return "Stories".localized()
         case 4:
-            return "Events"
+            return "Events".localized()
         case 5:
-            return "Series"
+            return "Series".localized()
         default:
             return ""
         }

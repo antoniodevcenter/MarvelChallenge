@@ -23,4 +23,9 @@ extension String {
     static func createThumbnailString(thumbnail: Thumbnail, size: String) -> String {
         return "\(thumbnail.path!)\(size).\(thumbnail.thumbnailExtension!)"
     }
+    
+    func localized() -> String {
+        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: self)
+    }
+    
 }
