@@ -13,15 +13,20 @@ class CharactersListTableViewController: UITableViewController, CharactersListPr
     private let presenter = CharactersListPresenter()
 
     var startingLetter: String?
+    var loadingView: LoadingView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: CharacterNameTableViewCell.cellIdentifier(), bundle: nil), forCellReuseIdentifier: CharacterNameTableViewCell.cellIdentifier())
+        tableView.tableFooterView = UIView()
+        
+        loadingView = LoadingView(parentView: self.view)
     }
     
     public func configureFor(startingLetter: String) {
         presenter.configureForLetter(letter: startingLetter, delegate: self)
+        self.title = startingLetter
     }
 
     // MARK: - Presenter Delegate
@@ -32,6 +37,7 @@ class CharactersListTableViewController: UITableViewController, CharactersListPr
     
     func updateCharactersArray(arrayOfCharacters: [Character]?, error: Error?) {
         self.tableView.reloadData()
+        loadingView?.hideLoadingView()
     }
     
     func goToCharacterDetail(id: Int) {
@@ -75,7 +81,6 @@ class CharactersListTableViewController: UITableViewController, CharactersListPr
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == presenter.arrayOfCharacters.count - 10 {
-//            presenter.getArticlesFor(categoryName: self.wikiCategory.nameForURL, limit: presenter.limit, offset: presenter.offset)
             presenter.getCharactersFor(startingLetter: self.startingLetter!, limit: presenter.limit, offset: presenter.offset)
         }
     }

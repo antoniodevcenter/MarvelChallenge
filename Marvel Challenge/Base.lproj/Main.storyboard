@@ -59,17 +59,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ASG-hA-s5m">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skeletonPicture" translatesAutoresizingMaskIntoConstraints="NO" id="ASG-hA-s5m">
                                 <rect key="frame" x="0.0" y="88" width="414" height="232"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ASG-hA-s5m" secondAttribute="height" multiplier="207:116" id="TeB-ci-RDm"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gRl-yU-FAq">
-                                <rect key="frame" x="0.0" y="328" width="414" height="568"/>
+                                <rect key="frame" x="0.0" y="320" width="414" height="576"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="XMe-bp-UrU" id="bHM-KX-6Bs"/>
+                                    <outlet property="delegate" destination="XMe-bp-UrU" id="UTP-4V-H39"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -80,7 +81,7 @@
                             <constraint firstItem="0jc-ga-2xO" firstAttribute="trailing" secondItem="gRl-yU-FAq" secondAttribute="trailing" id="Vat-xB-yEf"/>
                             <constraint firstItem="0jc-ga-2xO" firstAttribute="trailing" secondItem="ASG-hA-s5m" secondAttribute="trailing" id="euz-kP-Iar"/>
                             <constraint firstItem="gRl-yU-FAq" firstAttribute="bottom" secondItem="0jc-ga-2xO" secondAttribute="bottom" constant="34" id="k6l-8x-29w"/>
-                            <constraint firstItem="gRl-yU-FAq" firstAttribute="top" secondItem="ASG-hA-s5m" secondAttribute="bottom" constant="8" id="kF7-Ia-cEW"/>
+                            <constraint firstItem="gRl-yU-FAq" firstAttribute="top" secondItem="ASG-hA-s5m" secondAttribute="bottom" id="kF7-Ia-cEW"/>
                             <constraint firstItem="ASG-hA-s5m" firstAttribute="top" secondItem="0jc-ga-2xO" secondAttribute="top" id="zWk-nT-WU0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0jc-ga-2xO"/>
@@ -89,11 +90,42 @@
                     <connections>
                         <outlet property="characterImageView" destination="ASG-hA-s5m" id="S9b-A8-rCM"/>
                         <outlet property="tableView" destination="gRl-yU-FAq" id="8Bc-Lj-Rtp"/>
+                        <segue destination="dYt-2L-y1R" kind="show" identifier="goToWebViewFromCharacterDetail" id="wRG-fT-bSH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0Q-Jc-j95" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3437.68115942029" y="164.73214285714286"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="YvJ-pS-MeR">
+            <objects>
+                <viewController id="dYt-2L-y1R" customClass="WebViewController" customModule="Marvel_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="46L-GZ-ipF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vvC-ct-voE">
+                                <rect key="frame" x="0.0" y="88" width="414" height="722"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="4sY-l1-cg7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="j37-HV-dRi"/>
+                    <connections>
+                        <outlet property="webView" destination="vvC-ct-voE" id="Bo4-rW-3lS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="orb-d4-Ccy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4295.652173913044" y="164.73214285714286"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BZx-kg-WH5">
@@ -114,4 +146,7 @@
             <point key="canvasLocation" x="853.62318840579712" y="164.73214285714286"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="skeletonPicture" width="148" height="148"/>
+    </resources>
 </document>

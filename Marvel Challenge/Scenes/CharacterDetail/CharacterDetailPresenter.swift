@@ -35,4 +35,24 @@ class CharacterDetailPresenter {
             self.delegate?.reloadView()
         }
     }
+    
+    func getNumberOfSections() -> Int {
+        var numberOfSections = 1
+        if (self.character?.comics.items!.count)! > 0 {
+            numberOfSections = numberOfSections + 1
+        }
+        if (self.character?.stories.items!.count)! > 0 {
+            numberOfSections = numberOfSections + 1
+        }
+        if (self.character?.events.items!.count)! > 0 {
+            numberOfSections = numberOfSections + 1
+        }
+        if (self.character?.series.items!.count)! > 0 {
+            numberOfSections = numberOfSections + 1
+        }
+        if (self.character?.urls.count)! > 0 {
+            numberOfSections = numberOfSections + 1
+        }
+        return numberOfSections
+    }
 }
