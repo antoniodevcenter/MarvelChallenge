@@ -3,9 +3,9 @@ Challenge for Openbank
 
 ## Description
 
-- This project is basically a list of Marvel characters which displays a bit of information about all of them.
+- This project is just a list of Marvel characters which displays a bit of information about all of them.
 
-- The initial view is an alphabetical index so when the user selects a letter the app shows a list of characters starting with the selected letter. There is a character which first letter is 3 so I also added this number to the list.
+- The initial view is an alphabetical index so when the user selects a letter the app shows a list of characters starting with the selection. There is a character which first letter is 3 so I also added this number to the list.
 
 - The list of characters starting by the selected letter doesn't show all the caracters at the same time but using pagination loading and showing 20 characters more while the user scrolls down. The first load shows a spinner to let the user know that the app is loading data. 
 
@@ -29,7 +29,7 @@ The only external libraries used are **Alamofire** for the API calls and **Alamo
 
 ### Architecture for API calls
 
-There are only two different API calls, one for get a list of characters (in this case the ones that start with the selected letter) and other for get the detail of a selected character. In the first one should be only the most important data of each character to make the request ligher, but the call returns all the information of all the characters in the result. With this, the second API call could be not necessary but I use it according to the description of the task.
+There are only two different API calls, one for get a list of characters (in this case the ones that start with the selected letter) and other to get the detail of a selected character. In the first one should be only the most important data of each character to make the request ligher, but the call returns all the information of all the characters in the result. With this, the second API call could be not necessary but I use it according to the description of the task.
 
 There are three classes used in the logic of API calls:
 
