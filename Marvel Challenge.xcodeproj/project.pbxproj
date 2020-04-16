@@ -26,6 +26,8 @@
 		8054B5F32432380D00F91D4F /* URLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8054B5F22432380D00F91D4F /* URLElement.swift */; };
 		8054B5F6243240C600F91D4F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8054B5F5243240C600F91D4F /* LoadingView.swift */; };
 		8054B5F92433198100F91D4F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8054B5F82433198100F91D4F /* WebViewController.swift */; };
+		80839B24244885ED000AB21A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8007C00624483F03005D1A48 /* WebKit.framework */; };
+		80839B262448861A000AB21A /* Pods_Marvel_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0458F9588C2E3E64F5B885CD /* Pods_Marvel_Challenge.framework */; };
 		809FEA9C242CC71D00A39676 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809FEA9B242CC71D00A39676 /* Common.swift */; };
 		809FEA9F242CCD7A00A39676 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809FEA9E242CCD7A00A39676 /* String.swift */; };
 		809FEAA2242CE7A300A39676 /* CharacterDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809FEAA1242CE7A300A39676 /* CharacterDataWrapper.swift */; };
@@ -44,7 +46,6 @@
 		80C31001242E0E45008AC74C /* CharacterNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80C30FFF242E0E45008AC74C /* CharacterNameTableViewCell.xib */; };
 		80C31003242E1BDE008AC74C /* ImagesDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C31002242E1BDE008AC74C /* ImagesDownloadManager.swift */; };
 		80C3100B242E2FCE008AC74C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 80C3100D242E2FCE008AC74C /* Localizable.strings */; };
-		AE91502BEC398778CB40CA2C /* Pods_Marvel_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0458F9588C2E3E64F5B885CD /* Pods_Marvel_Challenge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		0458F9588C2E3E64F5B885CD /* Pods_Marvel_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel_Challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8007C00624483F03005D1A48 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		801B2D9A242CBFCB00158C9F /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		801B2D9C242CC1C900158C9F /* ResponseParserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseParserManager.swift; sourceTree = "<group>"; };
 		801B2D9E242CC31000158C9F /* ConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
@@ -121,7 +123,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE91502BEC398778CB40CA2C /* Pods_Marvel_Challenge.framework in Frameworks */,
+				80839B24244885ED000AB21A /* WebKit.framework in Frameworks */,
+				80839B262448861A000AB21A /* Pods_Marvel_Challenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +148,7 @@
 		319B1531DDA1972E811433DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8007C00624483F03005D1A48 /* WebKit.framework */,
 				0458F9588C2E3E64F5B885CD /* Pods_Marvel_Challenge.framework */,
 			);
 			name = Frameworks;
